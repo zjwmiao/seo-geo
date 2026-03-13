@@ -57,7 +57,7 @@ node scripts/crawl.js https://example.com/ --out=example-home --format=both
 # JS 渲染站点（React/Vue SPA）使用 browser 模式
 node scripts/crawl.js https://example.com/ --mode=browser --format=both
 
-# 抓取本地开发服务器
+# 抓取本地开发服务器（必须用 browser 模式，本地开发服务器为客户端渲染）
 node scripts/crawl.js http://localhost:5173/some-page/ --mode=browser --out=local-page --format=both
 ```
 
@@ -132,7 +132,7 @@ node scripts/analyze.js crawled/example-home.html
 2. `/write-content` — 生成 SEO+GEO 优化的 Markdown 正文
 3. `/optimize-meta` — 生成 Frontmatter（title、description、OG 标签）
 4. `/generate-schema` — 生成 JSON-LD（HowTo / FAQPage / TechArticle）
-5. 本地开发服务器启动后，用 `crawl.js` 抓取 localhost 做上线前审计
+5. 本地开发服务器启动后，用 `crawl.js` 抓取 localhost 做上线前审计（**必须加 `--mode=browser`**，本地开发服务器为客户端渲染）
 
 ### GEO 优化核心原则
 
